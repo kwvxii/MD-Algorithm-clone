@@ -1,5 +1,9 @@
 /* ========== GLOBAL CSS for MDalgorithms Clone ========== */
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Fonts */
 @font-face {
   font-family: "Brut Grotesque";
