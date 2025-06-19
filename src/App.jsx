@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Partners from './components/Partners';
 import SectionIntro from './components/SectionIntro';
 import Brands from './components/Brands';
+import Philosophy from './components/Philosophy';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Partners />
       <SectionIntro />
       <Brands />
+      <Philosophy />
     </>
   );
 }
