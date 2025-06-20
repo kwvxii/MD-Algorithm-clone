@@ -16,7 +16,7 @@ function StatCounter({ end, delay, suffix, prefix, label }) {
             key={`countup-${end}-${inView}`} // forces remount
             start={0}
             end={end}
-            duration={2}
+            duration={1.5}
             delay={delay}
             suffix={suffix}
             prefix={prefix}
@@ -71,13 +71,13 @@ function Brands() {
             end={500}
             prefix="+"
             suffix="K"
-            delay={1}
+            delay={0.5}
             label="Treatments shipped to our customers"
           />
           <StatCounter
             end={2}
             suffix=" mins"
-            delay={2}
+            delay={1}
             label="Average time for skin or scalp assessment via our apps"
           />
         </div>

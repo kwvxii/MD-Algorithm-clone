@@ -1,9 +1,7 @@
 /* ========== GLOBAL CSS for MDalgorithms Clone ========== */
-
-html {
-  scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
 }
-
 /* Fonts */
 @font-face {
   font-family: "Brut Grotesque";
@@ -12,18 +10,20 @@ html {
   font-style: normal;
   font-display: swap;
 }
-
-body {
+html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  scroll-behavior: smooth;
+  height: 100%;
   font-family: "Brut Grotesque", sans-serif;
-  background-color:#fff8f5;
+  background-color: #fff8f5;
   color: #020711;
 }
-
 /* Header */
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -32,10 +32,9 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #fff8f5;
-  z-index: 999;
+  z-index: 1000;
   transition: all 0.2s ease-in-out;
 }
-
 .header-holder {
   display: flex;
   align-items: center;
@@ -45,7 +44,6 @@ body {
   max-width: 1200px;
   padding: 0 20px;
 }
-
 .nav-side {
   display: flex;
   gap: 2rem;
@@ -53,30 +51,25 @@ body {
   text-transform: uppercase;
   font-weight: 500;
 }
-
 .header-logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-
 .header-logo img {
   width: 200px;
   height: auto;
 }
-
 .nav-side a {
   color: #020711;
   text-decoration: none;
   margin: 0 12px;
   transition: color 0.3s ease;
 }
-
 .nav-side a:hover {
   color: #C7A17A;
   cursor: pointer;
 }
-
 .nav-opener {
   display: none;
 }
@@ -153,10 +146,18 @@ body {
 .header-spacer {
   height: 40px; /* same as your header height + safe margin */
 }
+/* When page is scrolled */
+.header.scrolled {
+  background-color: rgba(0, 0, 0, 0.7); /* dark effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px); /* optional: nice blur */
+}
 /* Hero */
 .hero {
-  padding: 140px 0 80px;
+  font-family: 'Copernicus', serif;
+  padding: 140px 1rem 80px;
   margin: 0 auto;
+  max-width: 1200px;
 }
 .hero-frame {
   display: flex;
@@ -173,10 +174,11 @@ body {
 .hero__image {
   flex: 1;
   max-width: 560px;
+  width: 100%;
 }
 .hero-title {
   font-size: clamp(36px, 5vw, 60px);
-  font-weight: 800;
+  font-weight: 400;
   text-align: left;
   line-height: 1.1;
   margin-bottom: 20px;
@@ -226,8 +228,10 @@ body {
     flex-direction: column-reverse;
     text-align: center;
     align-items: center;
-    padding: 0 1.5rem;
     gap: 1.5rem;
+  }
+  .header-spacer{
+    height: 0;
   }
   .hero__content {
     width: 100%;
@@ -255,26 +259,21 @@ body {
     justify-content: center;
     padding: 0;
   }
+  .section{
+    padding: 0px 0 10px;
+  }
 }
+
 /* Container */
 .container {
   width: 100%;
   max-width: 1200px;
-  margin-inline: auto;
-  box-sizing: border-box;
+  margin: 0 auto;
   padding: 0 1rem;
 }
 /* Section Spacing */
 .section {
-  padding: 80px 0 10px 0;
-}
-/* Footer */
-.footer {
-  background-color: #f1e9e5;
-  padding: 40px;
-  text-align: center;
-  font-size: 14px;
-  color: #777;
+  padding: 80px 0 10px;
 }
 /* Partners */
 .section-partners {
@@ -286,6 +285,8 @@ body {
   justify-content: center;       /* center entire block */
   gap: 2.5rem;                   /* space between text and logos */
   flex-wrap: wrap;               /* allow logos to wrap on small screens */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .partners-title {
   font-size: 14px;
@@ -298,6 +299,7 @@ body {
 .partners-list {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 3.5rem;
 }
@@ -340,6 +342,8 @@ body {
 .section-brands {
   padding: 0rem 0 3rem;
   background-color: #fff8f5;
+  font-family: 'Copernicus', serif;
+  
 }
 .brands-heading {
   text-align: center;
@@ -356,6 +360,11 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 .brand-item {
   position: relative;
@@ -371,6 +380,9 @@ body {
   text-align: center;
   color: white;
   z-index: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.4s ease;
 }
 .brand-item::before {
   content: '';
@@ -436,34 +448,54 @@ body {
   line-height: 1.5;
   color: #444;
 }
-@media (max-width: 768px) {
-  .brand-stats {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+@media (max-width: 1024px) {
+  .brand-item {
+    height: 400px;
+    max-width: 90%;
   }
 
-  .stat h4 {
-    font-size: 48px;
+  .brand-item h3 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .brands-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .brand-item {
+    height: 360px;
+    width: 100%;
+  }
+  .brand-item h3 {
+    font-size: 28px;
+  }
+  .brand-btn {
+    font-size: 13px;
+    padding: 8px 16px;
   }
 }
 @media (max-width: 480px) {
-  .brand-btn {
-    font-size: 12px;
-    padding: 8px 16px;
+  .brand-item {
+    height: 300px;
   }
 
   .brand-item h3 {
     font-size: 22px;
   }
+
+  .brand-btn {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
 }
 /* Philosophy */
 .section-philosophy {
-  padding: 0rem 0  3rem;
+  padding: 4rem 1rem  6rem;
   background-color: #fff8f5;
+  font-family: 'Copernicus', serif;
 }
 .philosophy-heading {
-  font-family: 'Copernicus', serif;
   font-size: clamp(30px, 4vw, 48px);
   text-align: center;
   margin-bottom: 1.5rem;
@@ -483,10 +515,13 @@ body {
   border-radius: 1rem;
   overflow: visible;
   height: 500px;
-  width: 85%;
   background-color: #00687a;
   position: relative;
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 .philosophy-left,
 .philosophy-right {
@@ -623,31 +658,25 @@ body {
     padding: 1rem 1rem;
     text-align: center;
   }
-
   .philosophy-right h3 {
     font-size: 24px;
   }
-
   .philosophy-right ul {
     padding-left: 1rem;
     text-align: left;
   }
-
   .philosophy-left img {
     margin-top: 0;
   }
-
   .scan-overlay {
     font-size: 10px;
     top: 1rem;
     left: 1rem;
   }
-
   .frame-corner {
     width: 30px;
     height: 30px;
   }
-
   .frame-corner.top-left,
   .frame-corner.top-right {
     top: 10px;
@@ -664,12 +693,10 @@ body {
   .frame-corner.bottom-right{
     right: 10px;
   }
-
   .arrow-container {
     width: 100%;
     margin: 0;
   }
-
   .arrow-container img {
     width: 30%;
   }
@@ -678,31 +705,286 @@ body {
   .philosophy-heading {
     font-size: 26px;
   }
-
   .philosophy-subtext {
     font-size: 16px;
     margin-bottom: 3rem;
   }
-
   .philosophy-right h3 {
     font-size: 20px;
   }
-
   .philosophy-right p,
   .philosophy-right li {
     font-size: 14px;
   }
-
   .philosophy-right ul {
     font-size: 14px;
   }
-
+    .scan-overlay {
+    font-size: 6px;
+    top: 1rem;
+    left: 1rem;
+  }
+  .frame-corner {
+    width: 30px;
+    height: 30px;
+  }
+  .frame-corner.top-left,
+  .frame-corner.top-right {
+    top: 10px;
+  }
+  .frame-corner.bottom-left,
+  .frame-corner.bottom-right {
+    bottom: 80px;
+  }
   .arrow-container {
     width: 100%;
     margin: 0.5rem;
   }
-
   .arrow-container img {
     width: 50%;
+  }
+}
+/* === Clinical Research Section === */
+.clinical-research-section {
+  font-family: 'Copernicus', serif;
+  background-color: #d9e7ec;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin: 6rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+.clinical-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+}
+.clinical-text {
+  margin: 0;
+  padding: 1rem auto;
+}
+.clinical-text h2 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #020711;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.clinical-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #333;
+}
+.clinical-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.clinical-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.3s ease;
+}
+.percent {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #020711;
+  margin-bottom: 0.5rem;
+}
+.progress-bar {
+  height: 6px;
+  background-color: #cbe6ef;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.filled-bar {
+  height: 100%;
+  background-color: #4cc0d1;
+  transition: width 1.5s ease;
+}
+.stat-text {
+  font-size: 0.9rem;
+  color: #222;
+  line-height: 1.4;
+}
+/* === Tablet (≤ 1024px) === */
+@media (max-width: 1024px) {
+  .clinical-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .clinical-text h2 {
+    font-size: 2rem;
+  }
+
+  .clinical-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .clinical-research-section {
+    margin: 4rem 8rem;
+    padding: 2.5rem 1.5rem;
+  }
+}
+/* === Mobile (≤ 600px) === */
+@media (max-width: 600px) {
+  .clinical-text h2 {
+    font-size: 1.6rem;
+  }
+  .clinical-text p {
+    font-size: 0.95rem;
+  }
+  .percent {
+    font-size: 1.6rem;
+  }
+  .clinical-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .clinical-research-section {
+    padding: 1rem 1rem;
+    margin: 4rem 3rem;
+  }
+}
+/*Founders-section*/
+.founders-section {
+  padding: 1rem 1rem;
+  text-align: center;
+  font-family: 'Copernicus', serif;
+}
+.founders-header h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: #020711;
+}
+.founders-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.founder {
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 500px;
+  text-align: left;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.founder:hover {
+  transform: translateY(-6px);
+}
+.founder-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.founder-info {
+  padding: 0.5rem 0;
+}
+.founder-info h3 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #020711;
+}
+.founder-role {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-style: italic;
+}
+.founder-info p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .founders-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .founder {
+    width: 100%;
+    max-width: 70%;
+  }
+}
+/* Footer Links */
+.contact-footer {
+  background: url(../assets/contact.png) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 0;
+  margin-top: 10rem;
+  text-align: center;
+  font-family: 'Copernicus', serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contact-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  color: #020711;
+}
+.contact-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 2;
+  color: #222;
+}
+.contact-content li {
+  margin: 0.5rem 0;
+}
+.underline-link {
+  text-decoration: underline;
+  color: #000;
+}
+.underline-link:hover {
+  color: rgba(0, 162, 255, 0.89);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.footer-note {
+  margin-top: 5rem;
+  font-size: 0.7rem;
+  color: #333;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+@media (max-width: 600px) {
+  .contact-content h2 {
+    font-size: 2rem;
+  }
+
+  .contact-content ul {
+    font-size: 0.95rem;
+  }
+
+  .footer-note {
+    margin-top: 3.5rem;
   }
 }

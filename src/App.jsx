@@ -5,6 +5,9 @@ import Partners from './components/Partners';
 import SectionIntro from './components/SectionIntro';
 import Brands from './components/Brands';
 import Philosophy from './components/Philosophy';
+import ClinicalResearch from './components/ClinicalResearch';
+import Founders from './components/Founders';
+import Contact from './components/Contact';
 import './App.css';
 
 function App() {
@@ -17,6 +20,9 @@ function App() {
       <SectionIntro />
       <Brands />
       <Philosophy />
+      <ClinicalResearch />
+      <Founders />
+      <Contact />
     </>
   );
 }
