@@ -5,6 +5,7 @@ import Partners from './components/Partners';
 import SectionIntro from './components/SectionIntro';
 import Brands from './components/Brands';
 import Philosophy from './components/Philosophy';
+import ComparisonTable from './components/ComparisonTable';
 import ClinicalResearch from './components/ClinicalResearch';
 import Founders from './components/Founders';
 import Contact from './components/Contact';
@@ -20,6 +21,7 @@ function App() {
       <SectionIntro />
       <Brands />
       <Philosophy />
+      <ComparisonTable />
       <ClinicalResearch />
       <Founders />
       <Contact />

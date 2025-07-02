@@ -11,7 +11,9 @@ function Header() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 50);
+     const scrollY = window.scrollY;
+     console.log('scrollY:', scrollY); // ✅ shows value in console
+     setScrolled(scrollY > 0); // make it trigger earlier
     };
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
@@ -30,8 +32,7 @@ function Header() {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }} className="header-logo">
           <img src={logo} alt="MDalgorithms logo" />
-        </a>    
-
+        </a>
 
         <div className="nav-side nav-right">
           <a className="nav-item" href="#section-about">ABOUT US</a>
@@ -42,7 +43,6 @@ function Header() {
           <img src={isMenuOpen ? closeIcon : menuIcon} alt="Menu" />
         </button>
       </div>
-
       {isMenuOpen && (
         <div className="mobile-menu">
           <a href="#section-brands" onClick={toggleMenu}>OUR BRANDS</a>

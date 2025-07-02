@@ -1,0 +1,29 @@
+/* ========== GLOBAL CSS for MDalgorithms Clone ========== */
+
+/* Header scroll effect */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  background-color: rgba(5, 5, 5, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+.header.scrolled .nav-item {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.header.scrolled .nav-opener img,
+.header.scrolled .header-logo img {
+  filter: brightness(0) invert(1);
+}
+
+/* ... other styles remain unchanged ... */

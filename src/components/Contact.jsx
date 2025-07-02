@@ -9,19 +9,19 @@ const Contact = () => {
           <li>
             MDhair Support:{' '}
             <a href="mailto:support@mdhair.co" className="underline-link">
-              support@mdhair.co
+              <em>support@mdhair.co</em>
             </a>
           </li>
           <li>
             MDacne Support:{' '}
             <a href="mailto:support@mdacne.com" className="underline-link">
-              support@mdacne.com
+              <em>support@mdacne.com</em>
             </a>
           </li>
           <li>
             MDalgorithms:{' '}
             <a href="mailto:contact@mdalgorithms.com" className="underline-link">
-              contact@mdalgorithms.com
+              <em>contact@mdalgorithms.com</em>
             </a>
           </li>
         </ul>

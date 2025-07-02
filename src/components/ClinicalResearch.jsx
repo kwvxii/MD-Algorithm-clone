@@ -66,7 +66,7 @@ export default function ClinicalResearch() {
             six-month study in the USA, which was approved by an Institutional Review Board. The
             study demonstrated statistically significant improvements in hair growth, coverage, and
             thickness. <br />
-            <em>J Drugs Dermatol. 2025 Mar;24(3)</em>
+            J Drugs Dermatol. 2025 Mar;24(3)
           </p>
         </div>
         </FadeInSection>
