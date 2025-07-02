@@ -50,12 +50,12 @@ html, body {
   justify-content: space-between;
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   padding: 0 20px;
 }
 .nav-side {
   display: flex;
-  gap: 2rem;
+  gap: 0.5rem;
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 500;
@@ -155,7 +155,6 @@ html, body {
 .header-spacer {
   height: 40px; /* same as your header height + safe margin */
 }
-/* When page is scrolled */
 .header.scrolled {
   background-color: rgba(0, 0, 0, 0.7); /* dark effect */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -281,14 +280,16 @@ html, body {
 /* Container */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 /* Section Spacing */
 .section {
   padding: 40px 0 10px;
 }
+
 /* Partners */
 .section-partners {
   padding: 4rem 0 2rem;
@@ -354,6 +355,7 @@ html, body {
   background-color: #e5ded8;
   margin: 3rem auto 0 auto;
 }
+
 /* Brands */
 .section-brands {
   padding: 0rem 0 3rem;
@@ -506,6 +508,7 @@ html, body {
     padding: 6px 14px;
   }
 }
+
 /* Philosophy */
 .section-philosophy {
   padding: 4rem 1rem  6rem;
@@ -768,7 +771,7 @@ html, body {
 
 /*----------Comparison Section------------*/
 .comparison-section {
-  background-color: #fefaf8;
+  background-color: #fff8f5;
   padding: 80px 20px;
   display: flex;
   align-content: center;
@@ -881,7 +884,7 @@ html, body {
   background-color: #d9e7ec;
   padding: 3rem 2rem;
   border-radius: 12px;
-  margin: 6rem auto;
+  margin: 3rem auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 1000px;
   box-sizing: border-box;
@@ -990,6 +993,131 @@ html, body {
     margin: 4rem 3rem;
   }
 }
+
+/* === Research Section === */
+.research-section {
+  background: #fff8f5;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  max-width: 1000px;        
+  width: 100%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+.research-section h2 {
+  font-size: 3rem;
+  font-weight: lighter;
+  font-family: "Lora", serif;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+.research-section p {
+  font-family: "Arimo", serif;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+/* === Desktop Grid View === */
+.research-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0 auto 0.75rem auto;
+  text-align: left;
+}
+/* === Research Card === */
+.research-card {
+  background: #fff;
+  border: 1px solid #c0ac9c;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: box-shadow 0.2s ease;
+}
+.research-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+/* === Journal Icons === */
+.journal {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.journal-icon {
+  width: 60%;
+}
+.journal-icon1 {
+  width: 25%;
+}
+.journal-icon2 {
+  width: 50%;
+}
+/* === Text Content === */
+.title {
+  font-family: "Arimo", serif;
+  font-size: 1rem;
+  color: #111;
+  margin-bottom: 3rem;
+  line-height: 1.5;
+}
+.citation {
+  font-family: "Arimo", serif;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+/* === View Switches === */
+.desktop-view {
+  display: block;
+}
+.mobile-carousel {
+  display: none;
+}
+/* === Mobile Adjustments === */
+@media (max-width: 768px) {
+  .research-section {
+    padding: 2rem 1rem;
+    width: 100%;
+  }
+
+  .research-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .research-card {
+    padding: 1.25rem;
+  }
+
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-carousel {
+    display: block;
+  }
+
+  .research-group {
+    grid-template-columns: 1fr;  /* ✅ Force single column on small screens */
+  }
+}
+/* === Swiper Pagination Styling === */
+.swiper-pagination {
+  margin-top: 1rem;
+  text-align: center;
+}
+.swiper-pagination-bullet {
+  background-color: #bbb;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+}
+.swiper-pagination-bullet-active {
+  background-color: #111;
+}
+
 /*Founders-section*/
 .founders-section {
   padding: 1rem 1rem;

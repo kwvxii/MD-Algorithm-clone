@@ -7,6 +7,7 @@ import Brands from './components/Brands';
 import Philosophy from './components/Philosophy';
 import ComparisonTable from './components/ComparisonTable';
 import ClinicalResearch from './components/ClinicalResearch';
+import Research from './components/Research';
 import Founders from './components/Founders';
 import Contact from './components/Contact';
 import './App.css';
@@ -23,6 +24,7 @@ function App() {
       <Philosophy />
       <ComparisonTable />
       <ClinicalResearch />
+      <Research />
       <Founders />
       <Contact />
     </>

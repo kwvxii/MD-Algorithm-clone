@@ -12,8 +12,8 @@ function Header() {
   useEffect(() => {
     const onScroll = () => {
      const scrollY = window.scrollY;
-     console.log('scrollY:', scrollY); // ✅ shows value in console
-     setScrolled(scrollY > 0); // make it trigger earlier
+     console.log('scrollY:', scrollY); 
+     setScrolled(scrollY > 10); 
     };
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);

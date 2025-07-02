@@ -1,4 +1,5 @@
 import React from 'react';
+import FadeInSection from './FadeInSection';
 
 const data = [
   {
@@ -30,11 +31,14 @@ const data = [
 const ComparisonTable = () => {
   return (
     <section className="comparison-section">
+      <FadeInSection delay={0}>
       <div>
         <h2 className="comparison-title">Superior total care,<br />tailored to <span className='highlight1'>you.</span></h2>
       </div>
+      </FadeInSection>
       <div className="comparison-wrapper">
         <table className="comparison-table">
+          <FadeInSection delay={0.2}>
           <thead>
             <tr>
               <th className="their-heading"><em>Their Products</em></th>
@@ -51,6 +55,7 @@ const ComparisonTable = () => {
               </tr>
             ))}
           </tbody>
+          </FadeInSection>
         </table>
       </div>
     </section>

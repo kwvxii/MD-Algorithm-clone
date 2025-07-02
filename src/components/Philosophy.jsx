@@ -93,7 +93,7 @@ function Philosophy() {
             <h3>Superior results</h3>
             <p>We provide a targeted, effective solution that minimizes irritation while maximizing results — all in a convenient package that minimizes the hassle and guesswork of acne and hair care.
 
-In addition, customers can track their progress, adjust treatments as needed, and access real-time support and guidance from our team of dermatologists and nurses.</p>
+              In addition, customers can track their progress, adjust treatments as needed, and access real-time support and guidance from our team of dermatologists and nurses.</p>
           </div>
         </div>
         </FadeInSection>
